@@ -115,7 +115,7 @@ func CreateOutFil(folderPath, filNam, filExt string) (outfil *os.File, err error
     return outfil, nil
 }
 
-func CreateDocFolder(path, foldnam string)(fullPath string, existDir bool, err error) {
+func CreateFileFolder(path, foldnam string)(fullPath string, existDir bool, err error) {
 
     // check if foldenam is valid -> no whitespaces
     fnamValid := true
