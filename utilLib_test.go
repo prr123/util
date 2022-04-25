@@ -11,13 +11,13 @@ import (
 //    "fmt"
     "testing"
 	"os"
-	util "utility/utilLib"
+//	util "utility/utilLib"
 
 )
 
 func TestCreateFileFolder(t *testing.T) {
 
-	fpath, exist, err := util.CreateFileFolder("test", "new")
+	fpath, exist, err := CreateFileFolder("test", "new")
 	if err != nil {
 		t.Error("should be nil!")
 	}
@@ -38,7 +38,7 @@ func TestCreateFileFolder(t *testing.T) {
 		t.Error("fpath should be dir!")
 	}
 
-	fpath, exist, err = util.CreateFileFolder("test", "new")
+	fpath, exist, err = CreateFileFolder("test", "new")
 	if err != nil {
 		t.Error("should be nil!")
 	}
@@ -53,7 +53,7 @@ func TestCreateFileFolder(t *testing.T) {
 func TestCreateFileFolder2(t *testing.T) {
 
 
-	fpath, exist, err := util.CreateFileFolder("test/test1/test2", "new")
+	fpath, exist, err := CreateFileFolder("test/test1/test2", "new")
 	if err != nil {
 		t.Error("should be nil!")
 	}
