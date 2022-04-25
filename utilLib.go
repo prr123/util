@@ -91,9 +91,9 @@ func CreateOutFil(folderPath, filNam, filExt string) (outfil *os.File, err error
 			return nil, fmt.Errorf("folderPath %s is not a folder!", folderPath)
 		}
 		if folderPath[lenFP-1] == '/' {
-			filpath = folderPath + "/" + fullFilNam
-		} else {
 			filpath = folderPath + fullFilNam
+		} else {
+			filpath = folderPath + "/" + fullFilNam
 		}
 	} else {
 		filpath = fullFilNam
