@@ -77,3 +77,33 @@ func TestCreateFileFolder2(t *testing.T) {
 	os.RemoveAll("test")
 
 }
+
+func TestCreateOutFil(t *testing.T) {
+
+	fpath, _, err := CreateFileFolder("test", "newfold")
+	if err != nil {
+		t.Error("should be nil!")
+	}
+
+	if fpath != "test/newfold" {
+		t.Error("folder path is incorrect!")
+	}
+	domfil := "domfil"
+	outfil, err := CreateOutFil(fpath, domfil, "html")
+	if err != nil {
+		t.Error("error create output file")
+	}
+
+	outfilNam := fpath + "/" + domfil + ".html"
+	if outfil.Name() != outfilNam {
+		t.Error("error output file name is incorrect")
+	}
+
+	_, err =  os.Stat(outfilNam)
+	if os.IsNotExist(err) {
+		t.Error("file should exist!")
+	}
+
+	os.RemoveAll("test")
+
+}
